@@ -1,0 +1,133 @@
+<body>
+  <div class="container_with_sidenav">
+    <div class="block_title">Добавить книгу</div>
+
+    <form class="welcome-container" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="user-item">
+        <div class="form-fields">
+          <div class="form-field">
+            <label for="title">Название книги</label>
+            <div class="input-field">
+              <input
+                id="title"
+                formControlName="title"
+                [(ngModel)]="title"
+                [ngClass]="{ invalid: _title.touched }"
+                type="text"
+              />
+              <span class="helper-text" *ngIf="_title.touched">
+                <span *ngIf="_title.errors?.['required']"
+                  >Введите название книги</span
+                >
+              </span>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="author">Автор</label>
+            <div class="input-field">
+              <input
+                id="author"
+                formControlName="author"
+                name="author"
+                [(ngModel)]="author"
+                type="text"
+                [ngClass]="{ invalid: _author.touched }"
+              />
+              <span class="helper-text" *ngIf="_author.touched">
+                <span *ngIf="_author.errors?.['required']"
+                  >Введите автора книги</span
+                >
+              </span>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="password">Жанр</label>
+            <div class="input-field">
+              <input
+                id="genre"
+                formControlName="genre"
+                name="genre"
+                [(ngModel)]="genre"
+                type="text"
+                [ngClass]="{ invalid: _genre.touched }"
+              />
+              <span class="helper-text" *ngIf="_genre.touched">
+                <span *ngIf="_genre.errors?.['required']"
+                  >Введите жанр книги</span
+                >
+              </span>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="image">URL изображения</label>
+            <div class="input-field">
+              <div class="content_image">
+                <input
+                  id="image"
+                  formControlName="image"
+                  name="image"
+                  [(ngModel)]="image"
+                  [ngClass]="{ invalid: _image.touched }"
+                  type="url"
+                />
+                <span class="helper-text" *ngIf="_image.touched">
+                  <span *ngIf="_image.errors?.['required']"
+                    >Добавьте изображение книги</span
+                  >
+                </span>
+
+                <div class="img">
+                  <img
+                    [src]="image"
+                    class="image"
+                    alt="Image"
+                    *ngIf="image !== ''"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="count">Количество экземпляров</label>
+            <div class="input-field">
+              <input
+                id="count"
+                formControlName="count"
+                name="count"
+                [(ngModel)]="count"
+                [ngClass]="{ invalid: _count.invalid }"
+                type="number"
+              />
+              <span *ngIf="_count.errors?.['min'] && _count.errors?.['max']"
+                >Введите допустимое количество экземпляров книг от 1 до 1000
+              </span>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="about">Краткое описание</label>
+            <textarea
+              formControlName="about"
+              name="about"
+              id="about"
+              [(ngModel)]="about"
+              placeholder="О книге..."
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-buttons">
+          <button
+            class="buttonReg"
+            type="submit"
+            [disabled]="form.invalid || form.disabled"
+          >
+            Добавить
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

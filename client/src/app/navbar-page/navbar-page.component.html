@@ -1,0 +1,95 @@
+<body>
+  <main>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a routerLink="/after_login">
+            <img src="assets/images/logo.svg" alt="logo" />
+          </a>
+        </div>
+
+        <nav class="menu">
+          <form (ngSubmit)="search()" class="d-flex" role="search">
+            <div class="search-box">
+              <input
+                type="search"
+                class="search-txt"
+                placeholder="Найти книгу"
+                routerLink="/bookCatalog"
+                name="query"
+                [(ngModel)]="query"
+              />
+              <button class="search-btn" type="submit">
+                <img src="assets/images/search.svg" alt="search" />
+              </button>
+            </div>
+          </form>
+          <ul>
+            <li class="menu-item-inside">
+              <a (click)="openNotification()" style="cursor: pointer">
+                <img
+                  src="assets/images/notifications.svg"
+                  alt="notifications"
+                />
+                <img
+                  src="assets/images/notification-badge.svg"
+                  alt="notification"
+                  class="notification-badge"
+                  *ngIf="authService.showNotificationBadge && showNotification"
+                />
+              </a>
+              <app-notification
+                [booksOnHand]="booksOnHand"
+                [isOpen]="isOpen"
+                (notifyBooksOnHand)="booksOnHand = $event"
+                #notificationComponent
+              ></app-notification>
+            </li>
+            <li class="menu-item-inside">
+              <a (click)="onLogoutClick()" style="cursor: pointer">
+                <img src="assets/images/logout.svg" alt="logout" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <ul class="sidenav">
+      <div class="container">
+        <div class="rectangle">
+          <div class="text">
+            <div class="facts">{{ randomFact.fact }}</div>
+            <div>
+              {{ randomFact.description }}
+            </div>
+          </div>
+        </div>
+        <li class="bold">
+          <img src="assets/images/profile.svg" alt="profile" />
+          <a class="waves-effect" routerLink="/welcome">Профиль</a>
+        </li>
+        <li class="bold">
+          <img src="assets/images/catalog.svg" alt="catalog" />
+          <a class="waves-effect" routerLink="/bookCatalog">Каталог книг</a>
+        </li>
+        <li class="bold">
+          <img src="assets/images/recomendation.svg" alt="recomendation" />
+          <a class="waves-effect" routerLink="/recomendation"
+            >Ваши рекомендации</a
+          >
+        </li>
+        <li class="bold">
+          <img src="assets/images/history.svg" alt="history" />
+          <a class="waves-effect" routerLink="/history">Запросы</a>
+        </li>
+        <li class="bold">
+          <img src="assets/images/readingNow.svg" alt="readingNow" />
+          <a class="waves-effect" routerLink="/readingNow">Читаю сейчас</a>
+        </li>
+      </div>
+    </ul>
+
+    <router-outlet></router-outlet>
+  </main>
+</body>

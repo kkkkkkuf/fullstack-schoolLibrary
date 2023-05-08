@@ -1,0 +1,99 @@
+<body>
+  <main>
+    <form
+      class="register-form-container"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+    >
+      <h1 class="form-title">Регистрация</h1>
+      <div class="form-fields">
+        <div class="form-field">
+          <input
+            id="fio"
+            formControlName="fio"
+            [(ngModel)]="fio"
+            [ngClass]="{ invalid: _fio.invalid && _fio.touched }"
+            type="text"
+            placeholder="ФИО"
+          />
+          <span *ngIf="_fio.invalid && _fio.touched" class="helper-text">
+            <span *ngIf="_fio.errors?.['required']">
+              Поле ФИО является обязательным
+            </span>
+            <span *ngIf="_fio.errors?.['pattern']">
+              ФИО должно состоять из трех слов, разделенных пробелом. Каждое
+              слово должно начинаться с заглавной буквы и может содержать только
+              кириллические символы.
+            </span>
+          </span>
+        </div>
+        <div class="form-field">
+          <input
+            id="classA"
+            formControlName="classA"
+            [(ngModel)]="classA"
+            [ngClass]="{ invalid: _classA.invalid && _classA.touched }"
+            type="text"
+            placeholder="Класс"
+          />
+          <span *ngIf="_classA.invalid && _classA.touched" class="helper-text">
+            <span *ngIf="_classA.errors?.['required']">
+              Поле класса является обязательным
+            </span>
+            <span *ngIf="_classA.errors?.['pattern']">
+              Класс должен состоять из одной или двух цифр, за которыми следует
+              заглавная буква кириллического алфавита. Например: 7А, 10Б и т.д.
+            </span>
+          </span>
+        </div>
+        <div class="form-field">
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            [(ngModel)]="email"
+            [ngClass]="{ invalid: _email.invalid && _email.touched }"
+            placeholder="Email"
+          />
+          <span class="helper-text" *ngIf="_email.invalid && _email.touched">
+            <span *ngIf="_email.errors?.['required']"
+              >Email не должен быть пустым</span
+            >
+            <span *ngIf="_email.errors?.['email']"
+              >Введите корректный email адрес</span
+            >
+          </span>
+        </div>
+        <div class="form-field">
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            [(ngModel)]="password"
+            [ngClass]="{ invalid: _password.invalid && _password.touched }"
+            placeholder="Password"
+          />
+          <span
+            class="helper-text"
+            *ngIf="_password.invalid && _password.touched"
+          >
+            <span *ngIf="_password.errors?.['required']"
+              >Пароль не должен быть пустым</span
+            >
+            <span
+              *ngIf="_password.errors?.['minlength'] && _password.errors?.['minlength']['requiredLength']"
+              >Пароль должен быть более
+              {{ _password.errors?.['minlength']['requiredLength']}} символов.
+              Сейчас {{_password.errors?.['minlength']['actualLength']}}
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-buttons">
+        <button class="buttonReg">Создать аккаунт</button>
+        <a routerLink="/login" class="link">Уже есть аккаунт?</a>
+        <a routerLink="/" class="link">Вернуться на главную</a>
+      </div>
+    </form>
+  </main>
+</body>

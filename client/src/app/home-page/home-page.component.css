@@ -1,0 +1,251 @@
+.header {
+  padding: 5px 0;
+  max-height: 54px;
+
+}
+
+.line {
+  border-bottom: 1px solid #000000;
+}
+
+
+.container {
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  vertical-align: bottom;
+}
+
+.menu {
+  display: flex;
+}
+
+
+.menu ul {
+  list-style: none;
+  display: flex;
+
+}
+
+.menu-item {
+  margin-right: 23px;
+}
+
+.menu-item a {
+  font-size: 15px;
+  color: #030305;
+  text-decoration: none;
+}
+
+.menu-item a:hover {
+  border-bottom: 2px solid black;
+}
+
+
+.main {
+  background: url("/assets/images/library.png");
+  background-repeat: no-repeat;
+  margin-top: 54px;
+  background-position: right;
+}
+
+
+
+.main-info {
+  padding-top: 200px;
+  margin-bottom: 49px;
+}
+
+.main-title {
+  font-size: 72px;
+  line-height: 100%;
+  font-weight: bold;
+  max-width: 750px;
+  margin-bottom: 41px;
+  letter-spacing: -0.04em;
+  transform-origin: left;
+  transition: font-size 0.5s;
+}
+
+span.white_word {
+  color: #ffffff;
+}
+
+.main-title:hover {
+  font-size: 75px;
+}
+
+
+.main-text {
+  font-size: 18px;
+  line-height: 141.19%;
+  color: #030305;
+  margin-bottom: 41px;
+  max-width: 485px;
+  letter-spacing: 0.1em;
+}
+
+.button {
+  /* padding: 20px; */
+  width: 334px;
+  height: 64px;
+  background: #8F7F71;
+  /* убираем стандартную рамку, потому что некоторые браузеры ее используют */
+  border: 0;
+  border-radius: 38px;
+  /* чтобы наши отступы входили в наши размеры */
+  box-sizing: border-box;
+  text-align: center;
+  filter: drop-shadow(0px 0px 21px #8F7F71);
+
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: -0.015em;
+  line-height: 21px;
+  color: #ffffff;
+  /* чтобы цвет менялся плавно */
+  transition: backgroung-color 5s;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: #8F7F71;
+  box-shadow: 0 0 30px #8F7F71;
+}
+
+
+
+
+.little-info-container {
+  display: flex;
+}
+
+.library2 {
+  margin-right: 30px;
+  padding-bottom: 36px;
+}
+
+.about-us-items {
+  display: flex;
+  /* чтобы они переносились */
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.about-us-item-info {
+  font-weight: lighter;
+  font-size: 16px;
+  line-height: 19px;
+  padding-top: 19px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #03030586;
+}
+
+.about-us-item-img {
+  overflow: hidden;
+  transition: transform 0.25s;
+}
+
+.about-us-item-img:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+.about-us {
+  padding-bottom: 46px;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.sub-title {
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 84px;
+  letter-spacing: -0.04em;
+  margin: 25px 0 25px 0;
+}
+
+.about-us-info {
+  max-width: 536px;
+  padding-left: -96px;
+
+
+}
+
+.about-us-text {
+  font-size: 24px;
+  line-height: 164.69%;
+  /* max-width: 440px; */
+  letter-spacing: 0.1em;
+
+
+}
+
+.about-us-questions {
+  margin-top: 53px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 164.69%;
+  color: #222324;
+
+}
+
+.about-us-button {
+  margin-top: 22px;
+  width: 138px;
+  height: 88px;
+  background: transparent;
+  /* убираем стандартную рамку, потому что некоторые браузеры ее используют */
+  border: 1px solid #000000;
+  border-radius: 83px;
+  /* чтобы наши отступы входили в наши размеры */
+  box-sizing: border-box;
+  text-align: center;
+
+  font-size: 24px;
+  line-height: 40px;
+  color: #000000;
+
+}
+
+.about-us-button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px #8a8484;
+}
+
+
+
+.footer {
+  border-top: 1px solid #000000;
+  padding: 5px 0;
+}
+
+.footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rights {
+  font-size: 15px;
+  color: #030305;
+}

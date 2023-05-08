@@ -1,0 +1,107 @@
+<div class="modal-header">
+  <h4 class="modal-title">Редактировать книгу</h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="dismissModal()"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="form-group">
+      <label for="title">Название</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="bookCopy.title"
+        name="title"
+      />
+    </div>
+    <div class="form-group">
+      <label for="author">Автор</label>
+      <input
+        type="text"
+        class="form-control"
+        id="author"
+        [(ngModel)]="bookCopy.author"
+        name="author"
+      />
+    </div>
+    <div class="form-group">
+      <label for="genre">Жанр</label>
+      <input
+        type="text"
+        class="form-control"
+        id="genre"
+        [(ngModel)]="bookCopy.genre"
+        name="genre"
+      />
+    </div>
+    <div class="form-group">
+      <label for="about">Описание</label>
+      <textarea
+        class="form-control"
+        id="about"
+        [(ngModel)]="bookCopy.about"
+        name="about"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="count">Количество в наличии</label>
+      <input
+        type="number"
+        class="form-control"
+        id="count"
+        [(ngModel)]="bookCopy.count"
+        name="count"
+      />
+    </div>
+    <div class="form-group">
+      <label for="image">Изображение</label>
+      <div>
+        <input
+          type="file"
+          (change)="onFileChange($event)"
+          #fileInput
+          class="d-none"
+        />
+        <input
+          type="text"
+          class="form-control mb-2"
+          placeholder="URL изображения"
+          [(ngModel)]="bookCopy.image"
+          name="image"
+        />
+        <div class="mb-3">
+          <img *ngIf="book.image" [src]="bookCopy.image" alt="Изображение" />
+        </div>
+        <button class="btn btn-primary" (click)="onImageClick()">
+          Выбрать файл
+        </button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="forWhatClass">Для какого класса</label>
+      <input
+        type="text"
+        class="form-control"
+        id="forWhatClass"
+        [(ngModel)]="bookCopy.forWhatClass"
+        name="forWhatClass"
+      />
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="saveBookChanges()">
+    Сохранить
+  </button>
+  <button type="button" class="btn btn-secondary" (click)="dismissModal()">
+    Отмена
+  </button>
+</div>

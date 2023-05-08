@@ -1,0 +1,23 @@
+<body>
+  <div class="container_with_sidenav">
+    <div class="block_title">Книги на руках</div>
+
+    <div class="book-items" *ngIf="books && books.length > 0; else noBooks">
+      <div class="while" *ngFor="let book of books">
+        <div class="book-item">
+          <div class="book-item-img">
+            <img [src]="book.image" alt="книга" />
+          </div>
+          <div class="book-item-title">{{ book.title }}</div>
+          <div class="book-item-author">{{ book.author }}</div>
+          <div class="book-item-button">
+            <button class="button" (click)="viewBook(book)">Подробнее</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noBooks>
+      <div class="center">У вас нет книг на руках.</div>
+    </ng-template>
+  </div>
+</body>

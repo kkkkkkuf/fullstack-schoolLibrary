@@ -1,0 +1,68 @@
+<body>
+  <main>
+    <form
+      class="register-form-container"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+    >
+      <h1 class="form-title">Вход в систему</h1>
+      <div class="form-fields">
+        <div class="input-field">
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            [(ngModel)]="email"
+            [ngClass]="{ invalid: _email.invalid && _email.touched }"
+            placeholder="Email"
+          />
+          <span class="helper-text" *ngIf="_email.invalid && _email.touched">
+            <span *ngIf="_email.errors?.['required']"
+              >Email не должен быть пустым</span
+            >
+            <span *ngIf="_email.errors?.['email']"
+              >Введите корректный email адрес</span
+            >
+          </span>
+        </div>
+        <div class="input-field">
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            [(ngModel)]="password"
+            [ngClass]="{ invalid: _password.invalid && _password.touched }"
+            placeholder="Password"
+          />
+          <span
+            class="helper-text"
+            *ngIf="_password.invalid && _password.touched"
+          >
+            <span *ngIf="_password.errors?.['required']"
+              >Пароль не должен быть пустым</span
+            >
+            <span
+              *ngIf="_password.errors?.['minlength'] && _password.errors?.['minlength']['requiredLength']"
+              >Пароль должен быть более
+              {{ _password.errors?.['minlength']['requiredLength']}} символов.
+              Сейчас {{_password.errors?.['minlength']['actualLength']}}
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-buttons">
+        <button
+          class="buttonReg"
+          type="submit"
+          [disabled]="form.invalid || form.disabled"
+        >
+          Войти
+        </button>
+        <a routerLink="/register" class="link">Создать аккаунт</a>
+        <a (click)="onMainPage()" class="link" style="cursor: pointer"
+          >Вернуться на главную</a
+        >
+      </div>
+    </form>
+  </main>
+</body>

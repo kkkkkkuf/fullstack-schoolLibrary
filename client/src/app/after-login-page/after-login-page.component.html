@@ -1,0 +1,109 @@
+<body>
+  <div class="container_with_sidenav">
+    <div class="onHands" *ngIf="books && books.length > 0">
+      <div class="block_title">Книги у вас на руках</div>
+      <section>
+        <div class="mySwiper container">
+          <div class="swiper-wrapper content">
+            <swiper
+              [slidesPerView]="
+                books.length === 1 ? 1 : books.length === 2 ? 2 : 3
+              "
+              [spaceBetween]="30"
+              [navigation]="{
+                prevEl: '.arrow_1',
+                nextEl: '.arrow_2'
+              }"
+              [scrollbar]="{ draggable: true }"
+            >
+              <ng-template swiperSlide *ngFor="let book of books">
+                <div class="swiper-slide card">
+                  <div class="card-content">
+                    <div class="image">
+                      <img [src]="book.image" alt="bookImage" />
+                    </div>
+
+                    <div class="book_author">
+                      <span class="book">{{ book.title }}</span>
+                      <span class="author">{{ book.author }}</span>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </swiper>
+          </div>
+        </div>
+        <div class="arrow_1 swiper-button-disabled">
+          <div></div>
+        </div>
+        <div class="arrow_2 swiper-button-disabled">
+          <div></div>
+        </div>
+      </section>
+    </div>
+    <div class="block_titlee">Популярные книги</div>
+    <div class="inside">
+      <div class="slider">
+        <input type="radio" name="testimonial" id="t-1" />
+        <input type="radio" name="testimonial" id="t-2" />
+        <input type="radio" name="testimonial" id="t-3" checked />
+        <input type="radio" name="testimonial" id="t-4" />
+        <input type="radio" name="testimonial" id="t-5" />
+        <div class="testimonials">
+          <label class="item" for="t-1">
+            <img
+              src="https://img3.labirint.ru/rc/05ebb670e440a8655c5fb689c1af3ea7/363x561q80/books42/419735/cover.jpg?1563737926"
+              alt="picture"
+              routerLink="/bookCatalog"
+            />
+            <p>1984</p>
+            <div class="author">Джордж Оруэлл</div>
+          </label>
+          <label class="item" for="t-2">
+            <img
+              src="https://s1.livelib.ru/boocover/1003317448/200x305/2954/boocover.jpg"
+              alt="picture"
+              routerLink="/bookCatalog"
+            />
+            <p>Гарри Поттер и Узник Азкабана</p>
+            <div class="author">Дж.К. Роулинг</div>
+          </label>
+          <label class="item" for="t-3">
+            <img
+              src="https://cdn.eksmo.ru/v2/430000000000006016/COVER/cover1__w600.jpg"
+              alt="picture"
+              routerLink="/bookCatalog"
+            />
+            <p>Гордость и предубеждение</p>
+            <div class="author">Джейн Остен</div>
+          </label>
+          <label class="item" for="t-4">
+            <img
+              src="https://static.insales-cdn.com/images/products/1/2701/560163469/Булгаков.jpg"
+              alt="picture"
+              routerLink="/bookCatalog"
+            />
+            <p>Мастер и Маргарита</p>
+            <div class="author">Михаил Булгаков</div>
+          </label>
+          <label class="item" for="t-5">
+            <img
+              src="https://www.bookvoed.ru/files/1836/64/31/11/3.jpeg"
+              alt="picture"
+              routerLink="/bookCatalog"
+            />
+            <p>Война и мир</p>
+            <div class="author">Лев Толстой</div>
+          </label>
+        </div>
+      </div>
+      <div class="dots">
+        <label for="t-1"></label>
+        <label for="t-2"></label>
+        <label for="t-3"></label>
+        <label for="t-4"></label>
+        <label for="t-5"></label>
+      </div>
+    </div>
+  </div>
+</body>

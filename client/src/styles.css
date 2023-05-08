@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr';
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html, body {
+  /* sans-serif - шрифт без засечек (гротеск) */
+  height: max-content;
+  background: linear-gradient(184.95deg, rgba(148, 133, 119, 0.61) -7.85%, #E0E0E0 67.78%);
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+

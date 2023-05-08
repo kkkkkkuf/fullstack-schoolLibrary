@@ -1,0 +1,75 @@
+<body>
+  <div class="container_with_sidenav">
+    <div class="block_title">Выданные книги</div>
+
+    <div class="filter-section">
+      <input type="text" [(ngModel)]="filterFIO" placeholder="Поиск по ФИО" />
+      <button class="filter-btn" [disabled]="!filterFIO" (click)="onFilter()">
+        Фильтровать
+      </button>
+      <button
+        class="clear-filter-btn"
+        [disabled]="!filterFIO"
+        (click)="clearFilter()"
+      >
+        Очистить фильтр
+      </button>
+    </div>
+
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Изображение</th>
+              <th>Название книги</th>
+              <th>Имя читателя</th>
+              <th>Срок сдачи</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container
+              *ngIf="filteredList && filteredList.length > 0; else nousersFound"
+            >
+              <tr *ngFor="let user of filteredList">
+                <td>
+                  <img
+                    [src]="user.image"
+                    [style.width.px]="imageWidth"
+                    [style.margin.px]="imageMargin"
+                  />
+                </td>
+                <td>{{ user.title }}</td>
+                <td>{{ user.memberFIO }}</td>
+                <td>{{ user.dueDate }}</td>
+                <td>
+                  <button
+                    class="button"
+                    style="cursor: pointer"
+                    (click)="openDialog(user)"
+                  >
+                    Книга возвращена
+                  </button>
+                </td>
+                <td>
+                  <button class="button_call">
+                    <a href="mailto:{{ user.memberEmail }}"
+                      ><span class="text"> Связаться с читателем</span></a
+                    >
+                  </button>
+                </td>
+              </tr>
+            </ng-container>
+            <ng-template #nousersFound>
+              <tr>
+                <td colspan="5" class="no-users-found">
+                  У пользователя на руках нет книг
+                </td>
+              </tr>
+            </ng-template>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>

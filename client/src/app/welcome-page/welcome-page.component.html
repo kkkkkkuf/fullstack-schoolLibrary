@@ -1,0 +1,47 @@
+<body>
+  <main>
+    <div class="container_with_sidenav">
+      <div class="welcome-container">
+        <div class="user-item" *ngIf="users">
+          <a>
+            <div class="user-item-img">
+              <img [src]="users.image" alt="userImage" />
+              <div class="caption">
+                <span class="update" (click)="fileInput.click()">Изменить</span>
+                <input
+                  type="file"
+                  (change)="onFileChanged($event)"
+                  #fileInput
+                  style="display: none"
+                />
+              </div>
+            </div>
+          </a>
+
+          <div class="user-item-title">
+            <div>Добро пожаловать,</div>
+            <div class="fio">{{ fio }}</div>
+          </div>
+          <div class="user-item-info">
+            <div class="user-item-point">
+              <div class="what">Должность:</div>
+              <div>{{ users.role }}</div>
+            </div>
+            <div class="user-item-point" *ngIf="users.role === 'учащийся'">
+              <div class="what">Класс:</div>
+              <div>{{ users.classA }}</div>
+            </div>
+            <div class="user-item-point" *ngIf="users.role === 'учащийся'">
+              <div class="what">Номер читательского билета:</div>
+              <div>{{ library_card_number }}</div>
+            </div>
+            <div class="user-item-point">
+              <div class="what">Email:</div>
+              <div>{{ email }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

@@ -1,0 +1,45 @@
+<body>
+  <div class="container_with_sidenav">
+    <div class="block_title">Запросы</div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Изображение</th>
+              <th>Название книги</th>
+              <th>Имя читателя</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of list">
+              <td>
+                <img
+                  [src]="user.image"
+                  [style.width.px]="imageWidth"
+                  [style.margin.px]="imageMargin"
+                />
+              </td>
+              <td>{{ user.title }}</td>
+              <td>{{ user.memberFIO }}</td>
+              <td>
+                <button
+                  class="button"
+                  (click)="openDialog(user)"
+                  style="cursor: pointer"
+                >
+                  Подтвердить
+                </button>
+              </td>
+              <td>
+                <button class="button_cancl" (click)="confirmAction(user)">
+                  Отклонить
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>

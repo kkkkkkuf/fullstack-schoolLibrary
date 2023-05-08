@@ -1,0 +1,14 @@
+<h2 mat-dialog-title class="title fw-bold">
+  Вы уверены, что эта книга возвращена?
+</h2>
+
+<mat-dialog-actions>
+  <button
+    class="btn btn-success"
+    [mat-dialog-close]="true"
+    (click)="bookReturned()"
+  >
+    Да
+  </button>
+  <button class="btn btn-light" [mat-dialog-close]="true">Нет</button>
+</mat-dialog-actions>

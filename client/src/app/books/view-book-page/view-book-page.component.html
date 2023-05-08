@@ -1,0 +1,31 @@
+<body>
+  <div class="container_with_sidenav">
+    <div class="about-book">
+      <div class="book-img">
+        <img [src]="Books.image" alt="Книга" />
+      </div>
+      <div class="book-info">
+        <div class="title">{{ Books.title }}</div>
+        <div class="author">{{ Books.author }}</div>
+        <div class="about">
+          {{ Books.about }}
+        </div>
+        <div class="genre">
+          <h5>Жанр:</h5>
+          <p>{{ Books.genre }}</p>
+        </div>
+        <div class="count">
+          <h5>В наличие:</h5>
+          <p>{{ Books.count }} штук</p>
+        </div>
+        <button
+          class="button"
+          *ngIf="authService.Librarian()"
+          (click)="editBook()"
+        >
+          Редактировать
+        </button>
+      </div>
+    </div>
+  </div>
+</body>

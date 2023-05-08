@@ -1,0 +1,23 @@
+<div class="notification" *ngIf="isOpen">
+  <div class="notification-content">
+    <div
+      class="book"
+      *ngFor="let book of _booksOnHand"
+      [ngClass]="{ 'due-soon': isDueSoon(book) }"
+    >
+      <div class="book-details">
+        <img src="{{ book.image }}" alt="book-image" />
+        <div class="book-title">{{ book.title }}</div>
+        <div class="book-author">{{ book.author }}</div>
+        <div class="due-date">Сдать до: {{ book.dueDate }}</div>
+        <div class="note">{{ book.remarks }}</div>
+        <button class="extend-btn" (click)="extendBook(book)">
+          Продлить хранение
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="notification-header">
+    <button class="close-btn" (click)="closeNotification()">&times;</button>
+  </div>
+</div>

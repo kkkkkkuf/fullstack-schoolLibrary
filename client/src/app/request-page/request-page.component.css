@@ -1,0 +1,120 @@
+body {
+  height: 100vh;
+}
+
+.container_with_sidenav {
+  display: block;
+  margin-left: 315px;
+  margin-top: 38px;
+  float: left;
+  width: 870px;
+}
+
+.block_title {
+  font-size: 24px;
+  line-height: 38px;
+  letter-spacing: 0.015em;
+  padding-top: 15px;
+}
+
+.welcome-container {
+  width: 872px;
+  height: 600px;
+  background: #EEEEEE;
+  border-radius: 30px;
+  margin-top: 21px;
+  margin-bottom: 27px;
+  margin-left: 8.5px;
+}
+table {
+  border-collapse: collapse;
+  /*убираем пустые промежутки между ячейками*/
+  border: 1px solid grey;
+  /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+}
+
+.table {
+  width: 100%;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.table thead th {
+  padding: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: left;
+  color: #444441;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  /* border-top: 2px solid #716561; */
+  /* border-bottom: 2px solid #716561; */
+}
+
+.table tbody td {
+  padding: 5px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #444441;
+  border-bottom: 1px solid grey;
+  text-align: left;
+}
+
+.table tbody td:not(:first-child) {
+  vertical-align: middle;
+}
+
+.button {
+  width: 125px;
+  height: 30px;
+  background: #2B7954;
+  /* убираем стандартную рамку, потому что некоторые браузеры ее используют */
+  border: 0;
+  border-radius: 5px;
+  /* чтобы наши отступы входили в наши размеры */
+  box-sizing: border-box;
+  text-align: center;
+
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #FFFFFF;
+  letter-spacing: 0.015em;
+  /* чтобы цвет менялся плавно */
+  transition: backgroung-color 5s;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: #27a050;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+}
+
+
+.button_cancl {
+  width: 125px;
+  height: 30px;
+  background: #af2020;
+  /* убираем стандартную рамку, потому что некоторые браузеры ее используют */
+  border: 0;
+  border-radius: 5px;
+  /* чтобы наши отступы входили в наши размеры */
+  box-sizing: border-box;
+  text-align: center;
+
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #FFFFFF;
+  letter-spacing: 0.015em;
+  /* чтобы цвет менялся плавно */
+  transition: backgroung-color 5s;
+}
+
+.button_cancl:hover {
+  cursor: pointer;
+  background: #d81d1d;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+

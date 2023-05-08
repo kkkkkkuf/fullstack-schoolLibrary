@@ -1,0 +1,107 @@
+<body>
+  <header class="header">
+    <div class="line">
+      <div class="container">
+        <div class="logo">
+          <a>
+            <img src="assets/images/logo.svg" alt="logo" />
+          </a>
+        </div>
+        <nav class="menu">
+          <ul>
+            <li class="menu-item">
+              <a routerLink="/login">Войти</a>
+            </li>
+            <li class="menu-item">
+              <a routerLink="/register">Зарегистрироваться</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="main">
+    <div class="container">
+      <div class="main-info">
+        <h1 class="main-title">
+          ДОБРО <span class="white_word">ПОЖАЛОВАТЬ</span> В БИБЛИОТЕКУ
+        </h1>
+        <div class="main-text">
+          Мы предлагаем широкий выбор книг на различные темы, от классических
+          произведений до современных бестселлеров. В нашей библиотеке вы
+          сможете расширить свой кругозор и узнать что-то новое.
+        </div>
+        <div class="main-action">
+          <button class="button" id="main_action" (click)="goRegister()">
+            Присоединиться сейчас
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="little-info">
+    <div class="container">
+      <div class="little-info-container">
+        <div class="library2">
+          <img src="assets/images/library2.jpg" alt="library2" />
+        </div>
+        <div class="about-us-items">
+          <div class="about-us-item">
+            <div class="about-us-item-img">
+              <img src="assets/images/morebook.jpg" alt="morebook" />
+            </div>
+            <div class="about-us-item-info">большой выбор книг</div>
+          </div>
+          <div class="about-us-item">
+            <div class="about-us-item-img">
+              <img src="assets/images/readingroom.jpg" alt="readingroom" />
+            </div>
+            <div class="about-us-item-info">читальный зал</div>
+          </div>
+          <div class="about-us-item">
+            <div class="about-us-item-img">
+              <img src="assets/images/study.jpg" alt="study" />
+            </div>
+            <div class="about-us-item-info">доступ к компьютерам</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-us">
+    <div class="container">
+      <h2 class="sub-title">О нас</h2>
+      <div class="about-container">
+        <div class="about-us-info">
+          <div class="about-us-text">
+            Мы - идеальное место для любителей чтения! Наша инновационная
+            библиотечная система предоставляет доступ к множеству книг разных
+            жанров и авторов. Выберите любимую книгу на сайте и получите ее в
+            бумажном формате.
+          </div>
+          <div class="about-us-questions">Оформить читательский билет?</div>
+          <button
+            class="about-us-button"
+            id="about_us_action"
+            (click)="goRegister()"
+          >
+            Да
+          </button>
+        </div>
+        <img src="assets/images/school.jpg" alt="school" class="about-us-img" />
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="logo">
+        <img src="assets/images/logo.svg" alt="logo" />
+      </div>
+      <div class="rights">Все права защищены</div>
+    </div>
+  </footer>
+</body>

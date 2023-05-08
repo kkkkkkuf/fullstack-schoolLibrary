@@ -1,0 +1,55 @@
+<body>
+  <div class="container_with_sidenav">
+    <div class="block_title">Каталог книг</div>
+
+    <div class="book-items">
+      <ng-container *ngIf="books && books.length > 0; else noBooksFound">
+        <div class="while" *ngFor="let book of books">
+          <div class="book-item">
+            <div class="book-item-img">
+              <img [src]="book.image" alt="книга" />
+            </div>
+            <div class="book-item-title">{{ book.title }}</div>
+            <div class="book-item-author">{{ book.author }}</div>
+            <div class="book-item-button">
+              <button
+                class="button"
+                *ngIf="authService.Member()"
+                (click)="viewBook(book)"
+              >
+                Подробнее
+              </button>
+              <button
+                class="button"
+                *ngIf="authService.Librarian()"
+                (click)="viewBookLibrarian(book)"
+              >
+                Подробнее
+              </button>
+              <button
+                class="button"
+                *ngIf="authService.loggedIn() && authService.Member()"
+                (click)="confirmTakeBook(book)"
+                [disabled]="book.count === 0"
+              >
+                Взять
+              </button>
+              <button
+                class="button_del"
+                *ngIf="authService.loggedIn() && authService.Librarian()"
+                (click)="confirmDeleteBook(book)"
+              >
+                Удалить
+              </button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #noBooksFound>
+        <div class="no-books-found">
+          К сожалению, у нас нет книги, которую вы хотите найти
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</body>

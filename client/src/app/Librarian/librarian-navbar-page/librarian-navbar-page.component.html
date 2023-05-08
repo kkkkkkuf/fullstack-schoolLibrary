@@ -1,0 +1,94 @@
+<body>
+  <main>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a>
+            <img src="assets/images/logo.svg" alt="logo" />
+          </a>
+        </div>
+
+        <nav class="menu">
+          <form (ngSubmit)="search()" class="d-flex" role="search">
+            <div class="search-box">
+              <input
+                type="search"
+                class="search-txt"
+                placeholder="Найти книгу"
+                routerLink="/librarian/bookCatalog"
+                name="query"
+                [(ngModel)]="query"
+              />
+              <button class="search-btn" type="submit">
+                <img src="assets/images/search.svg" alt="search" />
+              </button>
+            </div>
+          </form>
+          <ul>
+            <li class="menu-item-inside">
+              <a (click)="onLogoutClick()" style="cursor: pointer">
+                <img src="assets/images/logout.svg" alt="logout" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <ul class="sidenav">
+      <div class="container">
+        <div class="rectangle">
+          <div class="text">
+            <div class="facts">{{ quote.text }}</div>
+            <div>{{ quote.author }}</div>
+          </div>
+        </div>
+        <li class="bold">
+          <img src="assets/images/profile.svg" alt="profile" />
+          <a class="waves-effect" routerLink="/librarian/welcome">Профиль</a>
+        </li>
+        <li class="bold">
+          <img src="assets/images/catalog.svg" alt="catalog" />
+          <a class="waves-effect" routerLink="/librarian/bookCatalog"
+            >Каталог книг</a
+          >
+        </li>
+        <li class="bold">
+          <img src="assets/images/addBook.svg" alt="addBook" />
+          <a class="waves-effect" routerLink="/librarian/addBook"
+            >Добавить книгу</a
+          >
+        </li>
+        <li class="bold">
+          <img src="assets/images/confirm.svg" alt="confirm" />
+          <a
+            class="waves-effect"
+            (click)="onRequestPage()"
+            style="cursor: pointer"
+            >Подтвердить запрос</a
+          >
+          <img
+            src="assets/images/haveNotifications.svg"
+            alt="notification"
+            class="notification-badge"
+            *ngIf="authService.showNotificationRequets && showNotification"
+          />
+        </li>
+        <li class="bold">
+          <img src="assets/images/issuedBook.svg" alt="issuedBook" />
+          <a class="waves-effect" routerLink="/librarian/issuedBook"
+            >Выданные книги</a
+          >
+        </li>
+        <li class="bold">
+          <img src="assets/images/users.svg" alt="users" />
+          <a class="waves-effect" routerLink="/librarian/allUsers"
+            >Просмотр пользователей</a
+          >
+        </li>
+      </div>
+    </ul>
+
+    <router-outlet></router-outlet>
+  </main>
+</body>

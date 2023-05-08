@@ -1,0 +1,211 @@
+body {
+  height: 100vh;
+}
+
+.container_with_sidenav {
+  display: block;
+  margin-left: 315px;
+  margin-top: 38px;
+  float: left;
+  width: 870px;
+}
+
+.block_title {
+  font-size: 24px;
+  line-height: 38px;
+  letter-spacing: 0.015em;
+  padding-top: 15px;
+}
+
+.welcome-container {
+  width: 872px;
+  height: 600px;
+  background: #EEEEEE;
+  border-radius: 30px;
+  margin-top: 21px;
+  margin-bottom: 27px;
+  margin-left: 8.5px;
+}
+
+table {
+  border-collapse: collapse;
+  /*убираем пустые промежутки между ячейками*/
+  border: 1px solid grey;
+  /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+}
+
+.table {
+  width: 100%;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.table thead th {
+  padding: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: left;
+  color: #444441;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+}
+
+.table tbody td:not(:first-child) {
+  vertical-align: middle;
+}
+
+.table tbody td {
+  padding: 5px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #444441;
+  border-bottom: 1px solid grey;
+  text-align: left;
+}
+
+.button {
+  width: 125px;
+  height: 30px;
+  background: #2B7954;
+  /* убираем стандартную рамку, потому что некоторые браузеры ее используют */
+  border: 0;
+  border-radius: 5px;
+  /* чтобы наши отступы входили в наши размеры */
+  box-sizing: border-box;
+  text-align: center;
+
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #FFFFFF;
+  letter-spacing: 0.015em;
+  /* чтобы цвет менялся плавно */
+  transition: backgroung-color 5s;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: #27a050;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+}
+
+
+.button_call {
+  width: 125px;
+  height: 30px;
+  background: #2689A8;
+  /* убираем стандартную рамку, потому что некоторые браузеры ее используют */
+  border: 0;
+  border-radius: 5px;
+  /* чтобы наши отступы входили в наши размеры */
+  box-sizing: border-box;
+  text-align: center;
+
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #FFFFFF;
+  letter-spacing: 0.015em;
+  /* чтобы цвет менялся плавно */
+  transition: backgroung-color 5s;
+}
+
+ .text{
+    color: #FFFFFF;
+}
+a{
+    text-decoration: none;
+}
+
+.button_call:hover {
+  cursor: pointer;
+  background: #2252b4;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+
+.filter-section input[type="text"] {
+  font-size: 14px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ebebeb;
+  outline: none;
+}
+
+.filter-btn {
+  width: 120px;
+  height: 30px;
+  background: rgb(165, 163, 157);
+  border: 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #FFFFFF;
+  letter-spacing: 0.015em;
+  transition: background-color 0.2s ease-in-out;
+  margin: 10px;
+}
+
+.filter-btn:hover {
+  cursor: pointer;
+  background: #29593E;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+}
+
+.filter-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.filter-btn:disabled:hover {
+  background-color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.clear-filter-btn {
+  width: 120px;
+  height: 30px;
+  background: #3D3B33;
+  border: 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #FFFFFF;
+  letter-spacing: 0.015em;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.clear-filter-btn:hover {
+  cursor: pointer;
+  background: #000000;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+}
+
+.clear-filter-btn:disabled {
+  background-color: #3d3b3395;
+  cursor: not-allowed;
+}
+
+.clear-filter-btn:disabled:hover {
+  background-color: #3d3b3395;
+  cursor: not-allowed;
+  box-shadow: none;
+}

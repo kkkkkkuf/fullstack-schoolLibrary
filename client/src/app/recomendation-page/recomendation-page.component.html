@@ -1,0 +1,40 @@
+<body>
+  <div class="container_with_sidenav">
+    <div class="block_title">Учебная литература</div>
+
+    <div class="books" *ngIf="users && users.classA !== ''; else empty">
+      <div class="book-items">
+        <div class="while" *ngFor="let book of books">
+          <div
+            class="book-item"
+            *ngIf="parseInt(book.forWhatClass) === parseInt(users.classA)"
+          >
+            <div class="book-item-img">
+              <img [src]="book.image" alt="книга" />
+            </div>
+            <div class="book-item-title">{{ book.title }}</div>
+            <div class="book-item-author">{{ book.author }}</div>
+            <div class="book-item-button">
+              <button class="button" (click)="viewBook(book)">Подробнее</button>
+              <button
+                class="button"
+                *ngIf="authService.loggedIn()"
+                (click)="confirmTakeBook(book)"
+                [disabled]="book.count === 0"
+              >
+                Взять
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #empty>
+    <div class="center">
+      К сожалению, мы не можем посоветовать вам учебную литературу, так как вы
+      не указали класс, в котором вы учитесь. Обратитесь к библиотекарю и
+      возвращайтесь снова.
+    </div>
+  </ng-template>
+</body>

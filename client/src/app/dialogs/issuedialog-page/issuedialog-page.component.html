@@ -1,0 +1,37 @@
+<div class="text-end">
+  <abbr title="Close">
+    <i [mat-dialog-close]="true" class="fa-solid fa-circle-xmark fa-2xl"></i>
+  </abbr>
+</div>
+
+<h2 matDialogTitle class="title m-3">Выдача книги</h2>
+<form (ngSubmit)="issueBook()" class="forms" #issueDialog="ngForm">
+  <mat-dialog-content>
+    <div class="form-field">
+      <label for="dueDate" class="fw-bold">Срок сдачи: </label>
+      <input
+        type="date"
+        [(ngModel)]="item.dueDate"
+        placeholder="dd-mm-yyyy"
+        name="dueDate"
+        id="dueDate"
+        required
+        [min]="getMinDate()"
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="remarks" class="fw-bold">Примечания : </label>
+      <input
+        type="text"
+        [(ngModel)]="item.remarks"
+        name="remarks"
+        id="remarks"
+      />
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button class="button" type="submit">Подтвердить</button>
+    <button class="button_cancl" [mat-dialog-close]="true">Отменить</button>
+  </mat-dialog-actions>
+</form>

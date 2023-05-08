@@ -1,0 +1,108 @@
+main {
+  height: 100vh;
+}
+
+.container_with_sidenav {
+  display: block;
+  margin-left: 315px;
+  margin-top: 38px;
+  float: left;
+}
+
+.bold {
+  padding-left: 35px;
+}
+
+.welcome-container {
+  width: 872px;
+  height: 480px;
+  background: #EEEEEE;
+  border-radius: 30px;
+  margin-top: 21px;
+  margin-bottom: 27px;
+  margin-left: 8.5px;
+}
+
+.user-item {
+  /* max-width: 384px; */
+  text-align: center;
+  padding-top: 46px;
+  /* margin-bottom: 40px; */
+}
+
+img {
+  border-radius: 50%;
+  width: 190px;
+  height: 190px;
+}
+
+.user-item-img img {
+  /* чтобы лишних отступов не было */
+  vertical-align: bottom;
+}
+
+.user-item-img {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  /* обрезка фона по границе фотографии */
+}
+
+.caption {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.user-item-img:hover .caption {
+  display: block;
+}
+
+.user-item-title {
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: -0.015em;
+  padding: 10px 0 30px 0;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.fio {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: -0.015em;
+}
+
+.user-item-point {
+  display: flex;
+  margin-left: 162px;
+  margin-bottom: 20px;
+}
+
+.what {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: -0.015em;
+}
+
+.user-item-point div {
+  margin-left: 5px;
+}
+
+.user-item-title div {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.dn {
+  display: none;
+}

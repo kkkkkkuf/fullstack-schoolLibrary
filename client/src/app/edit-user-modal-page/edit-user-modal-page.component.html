@@ -1,0 +1,90 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">
+    Редактировать данные читателя
+  </h4>
+  <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form #editForm="ngForm" (ngSubmit)="onUpdate()">
+    <div class="form-group">
+      <label for="email">Email (неизменяемое поле)</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        [(ngModel)]="userCopy.email"
+        readonly
+        value="{{ userCopy.email }}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="fio">ФИО</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        name="firstName"
+        [(ngModel)]="userCopy.fio"
+        value="{{ userCopy.fio }}"
+        pattern="^[А-ЯЁ][а-яё]+\s[А-ЯЁ][а-яё]+\s[А-ЯЁ][а-яё]+$"
+        required
+        #firstName="ngModel"
+      />
+      <div
+        *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="firstName.errors?.['required']">
+          ФИО обязательно для заполнения
+        </div>
+        <div *ngIf="firstName.errors?.['pattern']">
+          ФИО должно состоять из трех слов, разделенных пробелом. Каждое слово
+          должно начинаться с заглавной буквы и может содержать только
+          кириллические символы.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="classA">Класс</label>
+      <input
+        type="text"
+        class="form-control"
+        id="classA"
+        name="classA"
+        [(ngModel)]="userCopy.classA"
+        value="{{ userCopy.classA }}"
+        pattern="^[1-9][0-9]?(?:[А-Яа-яёЁ])$"
+        required
+        #classA="ngModel"
+      />
+      <div
+        *ngIf="classA.invalid && (classA.dirty || classA.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="classA.errors?.['required']">
+          Класс обязателен для заполнения
+        </div>
+        <div *ngIf="classA.errors?.['pattern']">
+          Класс должен состоять из одной или двух цифр, за которыми следует
+          заглавная буква кириллического алфавита. Например: 7А, 10Б и т.д.
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="dismiss()">
+    Закрыть
+  </button>
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="onUpdate()"
+    [disabled]="!editForm.valid"
+  >
+    Сохранить
+  </button>
+</div>
