@@ -14,6 +14,7 @@
                 [(ngModel)]="title"
                 [ngClass]="{ invalid: _title.touched }"
                 type="text"
+                autocomplete="off"
               />
               <span class="helper-text" *ngIf="_title.touched">
                 <span *ngIf="_title.errors?.['required']"
@@ -32,6 +33,7 @@
                 name="author"
                 [(ngModel)]="author"
                 type="text"
+                autocomplete="off"
                 [ngClass]="{ invalid: _author.touched }"
               />
               <span class="helper-text" *ngIf="_author.touched">
@@ -52,6 +54,7 @@
                 [(ngModel)]="genre"
                 type="text"
                 [ngClass]="{ invalid: _genre.touched }"
+                autocomplete="off"
               />
               <span class="helper-text" *ngIf="_genre.touched">
                 <span *ngIf="_genre.errors?.['required']"
@@ -72,6 +75,7 @@
                   [(ngModel)]="image"
                   [ngClass]="{ invalid: _image.touched }"
                   type="url"
+                  autocomplete="off"
                 />
                 <span class="helper-text" *ngIf="_image.touched">
                   <span *ngIf="_image.errors?.['required']"
@@ -101,6 +105,7 @@
                 [(ngModel)]="count"
                 [ngClass]="{ invalid: _count.invalid }"
                 type="number"
+                autocomplete="off"
               />
               <span *ngIf="_count.errors?.['min'] && _count.errors?.['max']"
                 >Введите допустимое количество экземпляров книг от 1 до 1000
